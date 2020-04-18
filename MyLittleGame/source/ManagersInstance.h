@@ -4,10 +4,11 @@ namespace mlg {
 	class ResourceManager;
 	class ManagersInstance {
 	public:
-		//mayer's singletone
-		static ManagersInstance* getInstance();
 		SceneManager* getSceneManager();
 		ResourceManager* getResourceManager();
+
+		//mayer's singletone
+		static ManagersInstance* getInstance();
 	private:
 		ManagersInstance();
 		~ManagersInstance();

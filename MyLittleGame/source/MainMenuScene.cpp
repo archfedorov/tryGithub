@@ -31,7 +31,8 @@ MainMenuScene::MainMenuScene() {
 	exitButton->setLabel("exit");
 	exitButton->setReleaseCallback([]() {
 		GET_SCENE_MANAGER()->popScene();
-		});
+	});
+
 	playButton = new Button();
 	playButton->setSize({ 100, 100 });
 	playButton->setPosition(400, 300);
@@ -40,7 +41,7 @@ MainMenuScene::MainMenuScene() {
 		GET_SCENE_MANAGER()->clearScenes();
 		auto nextScene = new GameScene();
 		GET_SCENE_MANAGER()->pushScene(nextScene);
-		});
+	});
 }
 MainMenuScene::~MainMenuScene() {
 	delete exitButton;

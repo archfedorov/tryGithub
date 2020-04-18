@@ -7,23 +7,26 @@ ResourceManager::ResourceManager() {
 	loadFont("resource/fonts/Sansation.ttf", "default");
 }
 ResourceManager::~ResourceManager() {
-	for (auto& fontIterator : fonts) {
-		delete fontIterator.second;
+}
+sf::Texture& ResourceManager::getTexture(const std::string& aPath) {
+	auto found = textures.find(aPath);
+	if (found == textures.end()) {
+		sf::Texture newTexture;
+		newTexture.loadFromFile(aPath);
+		found = textures.insert(std::make_pair(aPath, newTexture)).first;
 	}
+	return found->second;
 }
 void ResourceManager::loadFont(const std::string& aPath, const std::string& aKey) {
-	auto newFont = new sf::Font();
-	if (newFont->loadFromFile(aPath)) {
+	sf::Font newFont;
+	if (newFont.loadFromFile(aPath)) {
 		auto found = fonts.find(aKey);
 		if (found != fonts.end()) {
-			delete found->second;
+			fonts.erase(found);
 		}
 		fonts[aKey] = newFont;
 	}
-	else {
-		delete newFont;
-	}
 }
-sf::Font* ResourceManager::getFont(const std::string& aKey) {
+sf::Font& ResourceManager::getFont(const std::string& aKey) {
 	return fonts[aKey];
 }

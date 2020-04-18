@@ -7,12 +7,16 @@
 
 #include "MainMenuScene.h"
 
+#include "Constants.h"
+
 using namespace mlg;
 
 static const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application() {
 	window = new sf::RenderWindow(sf::VideoMode(1024, 768), "My Little Game", sf::Style::Close);
+	Constants::setFloat("WINDOW_WIDTH", window->getSize().x);
+	Constants::setFloat("WINDOW_HEIGHT", window->getSize().y);
 	initialize();
 }
 Application::~Application() {

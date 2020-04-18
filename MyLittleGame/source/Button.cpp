@@ -11,11 +11,9 @@ using namespace mlg;
 Button::Button() {
 	setFillColor(sf::Color::White);
 	text.getTransform();
-	auto font = GET_RESOURCE_MANAGER()->getFont();
-	text.setFont(*font);
+	text.setFont(GET_RESOURCE_MANAGER()->getFont());
 	text.setFillColor(sf::Color::Black);
 	text.setOutlineColor(sf::Color::Red);
-
 	releaseCallback = nullptr;
 	pressCallback = nullptr;
 }

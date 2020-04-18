@@ -2,14 +2,9 @@
 #include "SFMLForward.h"
 
 namespace mlg {
-	//class TextureManager;
-	//class FontManager;
-
 	class Application {
 	private:
 		sf::RenderWindow* window;
-		//TextureManager* textureManager;
-		//FontManager* fontManager;
 		
 
 		void processInput();

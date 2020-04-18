@@ -3,6 +3,7 @@ GamePlay:
 	Game
 	Lose/Win
 	Profile(Highscore) additional
+	Atmosphere(Music, Sound, e.t.c)
 Code:
 	C++
 	OOP

@@ -38,7 +38,7 @@ void SceneManager::popScene() {
 
 }
 void SceneManager::clearScenes() {
-	actionQueue.push_back(SceneAction(eSceneActionType::POP));
+	actionQueue.push_back(SceneAction(eSceneActionType::CLEAR));
 }
 void SceneManager::handleEvent(const sf::Event& aEvent) {
 	for (auto it = scenes.rbegin(); it != scenes.rend(); it++) {

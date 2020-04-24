@@ -24,6 +24,7 @@
     <ClCompile Include="source\Constants.cpp" />
     <ClCompile Include="source\GameScene.cpp" />
     <ClCompile Include="source\Logger.cpp" />
+    <ClCompile Include="source\LoseScene.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MainMenuScene.cpp" />
     <ClCompile Include="source\ManagersInstance.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="source\EventHandler.h" />
     <ClInclude Include="source\GameScene.h" />
     <ClInclude Include="source\Logger.h" />
+    <ClInclude Include="source\LoseScene.h" />
     <ClInclude Include="source\MainMenuScene.h" />
     <ClInclude Include="source\ManagersInstance.h" />
     <ClInclude Include="source\ResourceManager.h" />

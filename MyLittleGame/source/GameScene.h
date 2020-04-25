@@ -3,6 +3,7 @@
 #include "Button.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include <queue>
+#include "World.h"
 
 namespace mlg {
 	class GameScene : public Scene {
@@ -12,43 +13,10 @@ namespace mlg {
 		bool handleEvent(const sf::Event& aEvent);
 		void draw(sf::RenderTarget&) override;
 		bool update(const sf::Time& deltaTime) override;
+		void restart();
 	private:
-		std::vector<sf::RectangleShape> pipes;
+		World* world;
 		void init();
-		bool checkCollision();
-		void createPipe();
-		
-		void lose();
-		bool isLost;
-
 		Button backButton;
-		sf::RectangleShape bird;
-		sf::RectangleShape earth;
-		sf::RectangleShape sky;
-
-		std::queue<double> scorePoints;
-		sf::Text scoreText;
-		unsigned int score;
-		void updateScoreText();
-
-		void initConstants();
-
-		float earthHeight;
-		float earthWidth;
-		float skyHeight;
-		float skyWidth;
-
-
-		float pipeVerticalGap;
-		float pipeHorizontalGap;
-		float pipeWidth;
-
-		float birdVelocity;
-		float birdAcc;
-		float birdWidth;
-		float birdHeight;
-		
-		double distance = 0.0f;
-		float worldVelocity;
 	};
 }

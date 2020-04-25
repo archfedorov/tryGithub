@@ -52,8 +52,8 @@ void SceneManager::applyActions() {
 	for (auto& action : actionQueue) {
 		switch (action.type) {
 		case eSceneActionType::CLEAR:
-			for (auto& scene : scenes) {
-				delete scene;
+			for (auto it = scenes.rbegin(); it != scenes.rend(); it++) {
+				delete *it;
 			}
 			scenes.clear();
 			break;
@@ -75,4 +75,13 @@ void SceneManager::applyActions() {
 		}
 	}
 	actionQueue.clear();
+}
+Scene* SceneManager::getScene(const std::string& name) {
+	for (auto it = scenes.rbegin(); it != scenes.rend(); it++) {
+		Scene* scene = *it;
+		if (scene->getName() == name) {
+			return scene;
+		}
+	}
+	return nullptr;
 }

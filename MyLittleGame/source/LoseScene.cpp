@@ -29,14 +29,16 @@ bool LoseScene::update(const sf::Time&) {
 }
 
 LoseScene::LoseScene() {
+	setName("LOSE");
 	restartButton = new Button();
 	restartButton->setSize({ 100, 100 });
 	restartButton->setPosition(400, 500);
 	restartButton->setLabel("restart");
 	restartButton->setReleaseCallback([]() {
-		GET_SCENE_MANAGER()->clearScenes();
-		auto nextScene = new GameScene();
-		GET_SCENE_MANAGER()->pushScene(nextScene);
+		auto scene = GET_SCENE_MANAGER()->getScene("GAME");
+		auto gs = (GameScene*)scene;
+		gs->restart();
+		GET_SCENE_MANAGER()->popScene();
 	});
 
 	mainMenuButton = new Button();

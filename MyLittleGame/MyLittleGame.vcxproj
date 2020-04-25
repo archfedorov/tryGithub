@@ -30,6 +30,7 @@
     <ClCompile Include="source\ManagersInstance.cpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Application.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\SFMLForward.h" />
     <ClInclude Include="source\Updateable.h" />
+    <ClInclude Include="source\World.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

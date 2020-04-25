@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "SFMLForward.h"
+#include <string>
 
 namespace mlg {
 	class Scene;
@@ -18,6 +19,7 @@ namespace mlg {
 		void pushScene(Scene*);
 		void popScene();
 		void clearScenes();
+		Scene* getScene(const std::string& name);
 	private:
 		enum class eSceneActionType {
 			POP = 0,

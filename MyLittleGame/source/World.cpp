@@ -12,6 +12,8 @@
 #include "Constants.h"
 #include "LoseScene.h"
 #include "Bird.h"
+#include "json.hpp"
+#include <fstream>
 
 using namespace mlg;
 
@@ -91,9 +93,14 @@ void World::lose() {
 	}
 }
 void World::initConstants() {
-	velocity = 150.f;
+	std::ifstream dataFile;
+	dataFile.open("resource/properties/gameProperties.json");
+	nlohmann::json jsonData;
+	dataFile >> jsonData;
+
+	velocity = jsonData["world"]["velocity"].get<float>();;
 	earthWidth = Constants::getFloat("WINDOW_WIDTH");
-	earthHeight = 112.f;
+	earthHeight = jsonData["world"]["earth_height"].get<float>();
 	skyWidth = Constants::getFloat("WINDOW_WIDTH");
 	skyHeight = Constants::getFloat("WINDOW_HEIGHT") - earthHeight;
 }

@@ -2,12 +2,18 @@
 #include "SFML/Graphics/RenderTarget.hpp"
 #include "SFML/System/Time.hpp"
 #include "Constants.h"
+#include "json.hpp"
+#include <fstream>
 
 using namespace mlg;
+
 PipeManager::PipeManager() {
-	std::ifstream >> pipeVerticalGap >> pipeHorizontalGap;
-	pipeVerticalGap = 150.0;
-	pipeHorizontalGap = 250.0;
+	std::ifstream dataFile;
+	dataFile.open("resource/properties/gameProperties.json");
+	nlohmann::json jsonData;
+	dataFile >> jsonData;
+	pipeVerticalGap = jsonData["pipe_manager"]["pipe_vertical_gap"].get<float>();
+	pipeHorizontalGap = jsonData["pipe_manager"]["pipe_horizontal_gap"].get<float>();
 
 	createPipe();
 }

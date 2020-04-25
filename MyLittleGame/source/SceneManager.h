@@ -33,6 +33,7 @@ namespace mlg {
 		};
 		std::vector<SceneAction> actionQueue;
 		std::vector<Scene*> scenes;
+
 		void applyActions();
 	};
 }

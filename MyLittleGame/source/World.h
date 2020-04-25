@@ -3,6 +3,10 @@
 #include "SFML/Graphics/Sprite.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
 #include "SFML/Graphics/Text.hpp"
+
+#include "Bird.h"
+#include "PipeManager.h"
+
 #include <queue>
 
 namespace mlg {
@@ -13,16 +17,15 @@ namespace mlg {
 		void draw(sf::RenderTarget&) override;
 		bool update(const sf::Time& deltaTime) override;
 		void tap();
+		float getVelocity();
+
 	private:
-		std::vector<sf::RectangleShape> pipes;
 		void init();
 		bool checkCollision();
-		void createPipe();
 		
 		void lose();
 		bool isLost;
 
-		sf::RectangleShape bird;
 		sf::RectangleShape earth;
 		sf::RectangleShape sky;
 
@@ -38,17 +41,10 @@ namespace mlg {
 		float skyHeight;
 		float skyWidth;
 
+		Bird bird;
+		PipeManager pipeManager;
 
-		float pipeVerticalGap;
-		float pipeHorizontalGap;
-		float pipeWidth;
-
-		float birdVelocity;
-		float birdAcc;
-		float birdWidth;
-		float birdHeight;
-		
 		double distance;
-		float worldVelocity;
+		float velocity;
 	};
 }

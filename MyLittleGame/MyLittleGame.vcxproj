@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Application.cpp" />
+    <ClCompile Include="source\Bird.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Constants.cpp" />
     <ClCompile Include="source\GameScene.cpp" />
@@ -28,12 +29,15 @@
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MainMenuScene.cpp" />
     <ClCompile Include="source\ManagersInstance.cpp" />
+    <ClCompile Include="source\Pipe.cpp" />
+    <ClCompile Include="source\PipeManager.cpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Application.h" />
+    <ClInclude Include="source\Bird.h" />
     <ClInclude Include="source\Button.h" />
     <ClInclude Include="source\Constants.h" />
     <ClInclude Include="source\Drawable.h" />
@@ -43,6 +47,8 @@
     <ClInclude Include="source\LoseScene.h" />
     <ClInclude Include="source\MainMenuScene.h" />
     <ClInclude Include="source\ManagersInstance.h" />
+    <ClInclude Include="source\Pipe.h" />
+    <ClInclude Include="source\PipeManager.h" />
     <ClInclude Include="source\ResourceManager.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />

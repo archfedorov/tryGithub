@@ -42,6 +42,11 @@ MainMenuScene::MainMenuScene() {
 		auto nextScene = new GameScene();
 		GET_SCENE_MANAGER()->pushScene(nextScene);
 	});
+	sf::Texture texture;// = getContext().textures->get(Textures::TitleScreen);
+	texture.loadFromFile("Media/Textures/man_run.png", sf::IntRect(0, 0, 100, 100));
+	spr = sf::Sprite(texture);
+	spr.setPosition(400, 400);
+//	runningMan.setRepeating(true);
 }
 MainMenuScene::~MainMenuScene() {
 	delete exitButton;

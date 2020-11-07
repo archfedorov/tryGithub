@@ -1,0 +1,10 @@
+{
+	"pipe_manager" : {
+		"pipe_vertical_gap": 150,
+		"pipe_horizontal_gap": 250
+	},
+	"world" : {
+		"velocity": 150,
+		"earth_height": 112
+	}
+}
